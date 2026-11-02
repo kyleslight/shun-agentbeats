@@ -1,6 +1,12 @@
-# A2A Agent Template
+# Shun — AgentBeats purple agent
 
-A minimal template for building [A2A (Agent-to-Agent)](https://a2a-protocol.org/latest/) agents.
+AgentBeats purple agent ("Agent Under Test") entry for **Shun**, a local-first desktop/terminal coding agent.
+
+- Product repo: https://github.com/kyleslight/shun
+- This repo: a minimal [A2A](https://a2a-protocol.org/latest/) container built from RDI-Foundation/agent-template.
+  The A2A endpoint currently runs the template's echo logic behind a "Shun" agent card, so the registry entry is
+  the Shun identity on top of the template shell. Swapping in Shun's own runtime is the next step.
+- Image: `ghcr.io/kyleslight/shun-agentbeats:latest`
 
 ## Project Structure
 

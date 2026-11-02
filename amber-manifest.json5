@@ -1,14 +1,12 @@
 {
   manifest_version: "0.1.0",
 
-  // TODO: Declare all config your agent needs from the deployer
-  // Use secret: true for sensitive values like API keys
+  // Shun needs no deployer-provided secrets: it is a local-first coding agent
+  // whose echo-style A2A endpoint answers tasks without external API keys.
   config_schema: {
     type: "object",
-    properties: {
-      my_api_key: { type: "string", secret: true },
-    },
-    required: ["my_api_key"],
+    properties: {},
+    required: [],
     additionalProperties: false,
   },
 
@@ -19,18 +17,14 @@
 
   // Runtime configuration
   program: {
-    // TODO: Replace with your docker image
-    image: "ghcr.io/<your-username>/<your-repo-name>:latest",
+    image: "ghcr.io/kyleslight/shun-agentbeats:latest",
     entrypoint: "uv run python src/server.py --host 0.0.0.0 --port 9010",
 
-    // TODO: Pass config values as environment variables
-    env: {
-      MY_API_KEY: "${config.my_api_key}",
-    },
+    env: {},
 
     network: {
       endpoints: [
-        { name: "a2a_endpoint", port: 9010 }, // ensure port matches your entrypoint
+        { name: "a2a_endpoint", port: 9010 },
       ],
     },
   },

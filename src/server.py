@@ -24,16 +24,25 @@ def main():
     # See: https://a2a-protocol.org/latest/tutorials/python/3-agent-skills-and-card/
     
     skill = AgentSkill(
-        id="",
-        name="",
-        description="",
-        tags=[],
-        examples=[]
+        id="coding",
+        name="Coding agent",
+        description=(
+            "Shun is a local-first desktop and terminal coding agent. It reads and edits "
+            "files, runs commands, and drives a browser to complete software engineering tasks."
+        ),
+        tags=["coding", "software-engineering", "terminal", "computer-use"],
+        examples=[
+            "Fix the failing test in this repository and explain the change.",
+            "Navigate this codebase and propose a patch for the reported issue.",
+        ],
     )
 
     agent_card = AgentCard(
-        name="",
-        description="",
+        name="Shun",
+        description=(
+            "Shun — a local-first desktop/terminal coding agent that works on real "
+            "repositories, runs commands, and operates a browser to finish tasks."
+        ),
         url=args.card_url or f"http://{args.host}:{args.port}/",
         version='1.0.0',
         default_input_modes=['text'],
